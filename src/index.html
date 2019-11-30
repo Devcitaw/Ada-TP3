@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Ada Design System</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body class="bg-light">
+    <div class="d-flex flex-column align-items-center container">
+      <div class="d-flex flex-column bd-highlight bg-white container">
+        <div
+          class="d-flex justify-content-between align-items-center p-2 bg-info text-white"
+        >
+          <h2>Ventas</h2>
+          <a href="#" class="text-white"
+            ><i class="fas fa-plus-circle"></i>
+            <span data-toggle="modal" data-target="#modalNuevaVenta"
+              >Nueva Venta</span
+            ></a
+          >
+        </div>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Fecha</th>
+              <th scope="col">Vendedora</th>
+              <th scope="col">Sucursal</th>
+              <th scope="col">Componentes</th>
+              <th scope="col">Precio</th>
+              <th scope="col"></th>
+              <!--Dejar vacio para los botones-->
+            </tr>
+          </thead>
+          <tbody id="ventas"></tbody>
+        </table>
+      </div>
+
+      <div class="d-flex flex-column bd-highlight bg-white container">
+        <div class="p-2 bg-info text-white">
+          <h2>Ventas por sucursal</h2>
+        </div>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Sucursal</th>
+              <th scope="col">Total Ventas</th>
+            </tr>
+          </thead>
+          <tbody id="sucursales"></tbody>
+        </table>
+      </div>
+
+      <div class="d-flex flex-column bd-highlight bg-white container">
+        <p>Producto estrella: <span id="productoMasVendido"></span></p>
+        <p>
+          Vendedora que más ingresos generó:
+          <span id="mayorVendedora"></span>
+        </p>
+      </div>
+
+      <div
+        class="modal fade"
+        id="modalNuevaVenta"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="addSale"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Ingresar nueva venta
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <label for="vendedora">Vendedora</label>
+              <select
+                name="vendedora"
+                id="vendedora"
+                class="form-control"
+              ></select>
+              <label for="componentes">Componentes</label>
+              <select
+                name="componentes"
+                id="componentes"
+                class="form-control"
+                multiple="multiple"
+              >
+              </select>
+              <label for="sucursal">Sucursal</label>
+              <select name="sucursal" id="sucursal" class="form-control">
+                ></select
+              >
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="ingresarVenta()"
+              >
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
+      integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
